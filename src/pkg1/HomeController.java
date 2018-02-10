@@ -1,5 +1,6 @@
 package pkg1;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import java.io.IOException;
 import java.net.URL;
@@ -8,10 +9,12 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import static pkg1.Main.editStage;
+import static pkg1.Main.homeController;
+import static pkg1.Main.homeStage;
+import static pkg1.Tools.refresh_LastID;
 
 public class HomeController implements Initializable {
 
@@ -45,19 +48,15 @@ public class HomeController implements Initializable {
 
     @FXML
     private TableColumn<Student, String> totalColumn;
-    @FXML
-    private TextField txtFNameToAdd;
-    @FXML
-    private TextField txtLNameToAdd;
+
     @FXML
     private JFXDatePicker DateOfCalcule;
     @FXML
-    private ComboBox<String> comboBegin;
-    @FXML
-    private ComboBox<?> comboEnd;
+    private JFXButton btnEdit;
 
     @Override
     public void initialize( URL url, ResourceBundle rb ) {
+        homeController = this;
         idColumn.setCellValueFactory(e -> e.getValue().idProperty.asObject());
         FnameColumn.setCellValueFactory(e -> e.getValue().FnameProperty);
         LnameColumn.setCellValueFactory(e -> e.getValue().LnameProperty);
@@ -67,15 +66,16 @@ public class HomeController implements Initializable {
         jusquaColumn.setCellValueFactory(e -> e.getValue().jusquaProperty);
         nbrDe8Column.setCellValueFactory(e -> e.getValue().nbrDe8Property);
         totalColumn.setCellValueFactory(e -> e.getValue().TotalProperty);
-//        tableView.selectionModelProperty().
+        
         tableView.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Student> observable, Student oldValue, Student newValue) -> {
             if (tableView.getSelectionModel().isEmpty()) {
                 btnDelete.setDisable(true);
+                btnEdit.setDisable(true);
             } else {
                 btnDelete.setDisable(false);
+                btnEdit.setDisable(false);
             }
         });
-//        btnDelete.disableProperty().bind(tableView.proper);
         Tools.fillTable(tableView);
     }
 
@@ -90,16 +90,9 @@ public class HomeController implements Initializable {
         if (!tableView.getSelectionModel().isEmpty()) {
             int Id = tableView.getSelectionModel().getSelectedItem().idProperty.get();
             String sql = "delete from student where id = " + Id;
-            Tools.delete(sql);
+            Tools.executeSQL(sql);
             Tools.fillTable(tableView);
-            refresh_LastID();
-        } 
-    }
-
-    public void refresh_LastID() {
-        Main.lastID = 0;
-        for (int i = 0; i < tableView.getItems().size(); i++) {
-            Main.lastID = tableView.getItems().get(i).idProperty.get();
+            refresh_LastID(this);
         }
     }
 
@@ -113,10 +106,11 @@ public class HomeController implements Initializable {
         calculation.calculate(tableView, DateOfCalcule.getValue());
     }
 
-//    @FXML
-//    private void ToHomeStage() {
-//        Main.addingStage.hide();
-//        Tools.fillTable(tableView);
-//        Main.homeStage.show();
-//    }
+    @FXML
+    private void editStudent() {
+        editStage = new EditStage();
+        homeStage.hide();
+        editStage.show();
+    }
+
 }

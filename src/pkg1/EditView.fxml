@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="406.0" style="-fx-background-color: #786;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg1.AddingController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="406.0" style="-fx-background-color: #786;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg1.EditController">
    <children>
       <FlowPane columnHalignment="CENTER" hgap="20.0" layoutX="50.0" layoutY="63.0" prefHeight="337.0" prefWidth="345.0" vgap="20.0" AnchorPane.rightAnchor="11.0">
          <children>
@@ -114,12 +114,12 @@
                   </Text>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="addButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" onAction="#AddStudent" prefHeight="40.0" prefWidth="80.0" ripplerFill="#3bff00" style="-fx-background-color: #7829;" text=" " textAlignment="CENTER" textFill="#040228">
+            <JFXButton fx:id="EditButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" onAction="#editStudent" prefHeight="40.0" prefWidth="80.0" ripplerFill="#3bff00" style="-fx-background-color: #7829;" text=" " textAlignment="CENTER" textFill="#040228">
                <font>
                   <Font name="Arial Bold" size="27.0" />
                </font>
                <graphic>
-                  <Text boundsType="VISUAL" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="0.0" text="إضافة" textAlignment="CENTER" textOrigin="CENTER">
+                  <Text boundsType="VISUAL" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="0.0" text="تعديل" textAlignment="CENTER" textOrigin="CENTER">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -131,7 +131,7 @@
             </JFXButton>
          </children>
       </HBox>
-      <Label fx:id="lblActionStatus" alignment="CENTER" layoutY="383.0" prefHeight="29.0" prefWidth="406.0" text="لقد تمت إضافة التلميذ إلى قاعدة البيانات بنجاح" textFill="#134d01" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Label fx:id="lblActionStatus" alignment="CENTER" layoutY="383.0" prefHeight="29.0" prefWidth="406.0" text="لقد تم تعديل بيانات التلميذ بنجاح" textFill="#134d01" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>

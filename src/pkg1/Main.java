@@ -8,6 +8,9 @@ public class Main extends Application {
 
     static AddingStage addingStage;
     static HomeStage homeStage;
+    static EditStage editStage;
+    //controllers
+    static HomeController homeController;
     static int lastID = 1;
     
     @Override

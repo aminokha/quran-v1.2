@@ -7,9 +7,9 @@ import javafx.scene.control.TableView;
 
 public class calculation {
 
-    static HashMap<Integer, Integer> page;
-    static HashMap<String, Integer> BeginPage;
-    static HashMap<String, Integer> EndPage;
+    static final HashMap<Integer, Integer> page;
+    static final HashMap<String, Integer> BeginPage;
+    static final HashMap<String, Integer> EndPage;
 
     static {
         page = new HashMap<>();
@@ -90,7 +90,7 @@ public class calculation {
         page.put(514, 1);
         page.put(512, 1);
         page.put(511, 1);
-        page.put(5010, 1);
+        page.put(510, 1);
         page.put(509, 1);
         page.put(507, 1);
         page.put(506, 1);

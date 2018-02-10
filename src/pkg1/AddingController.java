@@ -11,6 +11,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import static pkg1.Main.addingStage;
+import static pkg1.Main.homeStage;
 
 public class AddingController implements Initializable {
 
@@ -26,7 +28,7 @@ public class AddingController implements Initializable {
     private ComboBox<String> comboEnd;
 
     @FXML
-    private Label lblAddingStatus;
+    Label lblActionStatus;
 
     @Override
     public void initialize( URL url, ResourceBundle rb ) {
@@ -68,30 +70,30 @@ public class AddingController implements Initializable {
         jusqua = comboEnd.getSelectionModel().getSelectedItem() == (null) ? "" : comboEnd.getSelectionModel().getSelectedItem();
 
         String sql = String.format("insert into student (id,fname,lname,dateins,de,jusqua) values (%d,\"%s\",\"%s\",\"%s\",\"%s\",\"%s\")", id, fname, lname, dateIns, de, jusqua);
-        Tools.insert(sql);
+        Tools.executeSQL(sql);
         new Thread() {
             @Override
             public void run() {
                 try {
-                    lblAddingStatus.setVisible(true);
+                    lblActionStatus.setVisible(true);
                     Thread.sleep(1500);
-                    lblAddingStatus.setOpacity(0.8);
+                    lblActionStatus.setOpacity(0.8);
                     Thread.sleep(100);
-                    lblAddingStatus.setOpacity(0.7);
+                    lblActionStatus.setOpacity(0.7);
                     Thread.sleep(100);
-                    lblAddingStatus.setOpacity(0.6);
+                    lblActionStatus.setOpacity(0.6);
                     Thread.sleep(100);
-                    lblAddingStatus.setOpacity(0.5);
+                    lblActionStatus.setOpacity(0.5);
                     Thread.sleep(100);
-                    lblAddingStatus.setOpacity(0.4);
+                    lblActionStatus.setOpacity(0.4);
                     Thread.sleep(100);
-                    lblAddingStatus.setOpacity(0.3);
+                    lblActionStatus.setOpacity(0.3);
                     Thread.sleep(100);
-                    lblAddingStatus.setOpacity(0.2);
+                    lblActionStatus.setOpacity(0.2);
                     Thread.sleep(100);
-                    lblAddingStatus.setOpacity(0);
-                    lblAddingStatus.setVisible(false);
-                    lblAddingStatus.setOpacity(1);
+                    lblActionStatus.setOpacity(0);
+                    lblActionStatus.setVisible(false);
+                    lblActionStatus.setOpacity(1);
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
@@ -102,9 +104,9 @@ public class AddingController implements Initializable {
 
     @FXML
     private void ToHomeStage() {
-        Main.addingStage.hide();
-        Tools.fillTable((TableView<Student>) Main.homeStage.getScene().getRoot().getChildrenUnmodifiable().get(0));
-        Main.homeStage.show();
+        addingStage.hide();
+        Tools.fillTable((TableView<Student>) homeStage.getScene().getRoot().getChildrenUnmodifiable().get(0));
+        homeStage.show();
     }
 
 }

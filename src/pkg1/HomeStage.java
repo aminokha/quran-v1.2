@@ -22,11 +22,5 @@ public class HomeStage extends Stage{
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-    }
-
-//    private static void fillTable() {
-//        Tools.fillTable();
-//    }
-    
-    
+    }    
 }

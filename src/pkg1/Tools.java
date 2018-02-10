@@ -47,25 +47,25 @@ public class Tools {
         }
     }
 
-    public static void insert( String sqlInsert ) {
-        try {
-            connection = DriverManager.getConnection("jdbc:sqlite:students_table.sqlite");
-            statement = connection.createStatement();
-            statement.executeUpdate(sqlInsert);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        }
-    }
+//    public static void insert( String sqlInsert ) {
+//        try {
+//            connection = DriverManager.getConnection("jdbc:sqlite:students_table.sqlite");
+//            statement = connection.createStatement();
+//            statement.executeUpdate(sqlInsert);
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//        } finally {
+//            if (connection != null) {
+//                try {
+//                    connection.close();
+//                } catch (SQLException ex) {
+//                    ex.printStackTrace();
+//                }
+//            }
+//        }
+//    }
 
-    public static void delete( String sqlDelete ) {
+    public static void executeSQL( String sqlDelete ) {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:students_table.sqlite");
             statement = connection.createStatement();
@@ -105,6 +105,13 @@ public class Tools {
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
+        }
+    }
+
+    public static void refresh_LastID( HomeController homeController ) {
+        Main.lastID = 0;
+        for (int i = 0; i < homeController.tableView.getItems().size(); i++) {
+            Main.lastID = homeController.tableView.getItems().get(i).idProperty.get();
         }
     }
 }
