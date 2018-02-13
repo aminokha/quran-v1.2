@@ -11,6 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import static pkg1.Main.editStage;
 import static pkg1.Main.homeController;
 import static pkg1.Main.homeStage;
@@ -88,6 +90,16 @@ public class HomeController implements Initializable {
     @FXML
     private void delete() {
         if (!tableView.getSelectionModel().isEmpty()) {
+            int Id = tableView.getSelectionModel().getSelectedItem().idProperty.get();
+            String sql = "delete from student where id = " + Id;
+            Tools.executeSQL(sql);
+            Tools.fillTable(tableView);
+            refresh_LastID(this);
+        }
+    }
+    @FXML
+    private void deleteKeyIsPressed(KeyEvent event) {
+        if ((!tableView.getSelectionModel().isEmpty()) && event.getCode() == KeyCode.DELETE) {
             int Id = tableView.getSelectionModel().getSelectedItem().idProperty.get();
             String sql = "delete from student where id = " + Id;
             Tools.executeSQL(sql);

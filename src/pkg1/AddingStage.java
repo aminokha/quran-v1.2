@@ -14,6 +14,7 @@ public class AddingStage extends Stage {
             Scene scene = new Scene(root);
             setScene(scene);
             setResizable(false);
+            setTitle("إضافة طالب");
         } catch (IOException ex) {
             ex.printStackTrace();
         }

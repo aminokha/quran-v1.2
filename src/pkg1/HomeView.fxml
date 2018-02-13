@@ -16,7 +16,7 @@
 
 <AnchorPane prefHeight="701.0" prefWidth="1367.0" style="-fx-background-color: #786;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg1.HomeController">
    <children>
-      <TableView fx:id="tableView" editable="true" layoutX="71.0" layoutY="51.0" nodeOrientation="RIGHT_TO_LEFT" onKeyPressed="#delete" prefHeight="611.0" prefWidth="1025.0" style="-fx-font-size: 23; -fx-font-family: Arial gras;" tableMenuButtonVisible="true" AnchorPane.topAnchor="51.0">
+      <TableView fx:id="tableView" editable="true" layoutX="26.0" layoutY="44.0" nodeOrientation="RIGHT_TO_LEFT" onKeyPressed="#deleteKeyIsPressed" prefHeight="629.0" prefWidth="1109.0" style="-fx-font-size: 23; -fx-font-family: Arial gras;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="30.0" AnchorPane.topAnchor="45.0">
         <columns>
           <TableColumn fx:id="idColumn" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="الرقم">
                <graphic>
@@ -25,56 +25,56 @@
                         <DropShadow />
                      </effect></Text>
                </graphic></TableColumn>
-          <TableColumn fx:id="FnameColumn" maxWidth="180.0" minWidth="133.0" prefWidth="140.0" text="الإسم">
+          <TableColumn fx:id="FnameColumn" maxWidth="180.0" minWidth="100.0" prefWidth="140.0" text="الإسم">
                <graphic>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="الإسم           " textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="188.392578125">
                      <effect>
                         <DropShadow />
                      </effect></Text>
                </graphic></TableColumn>
-            <TableColumn fx:id="LnameColumn" maxWidth="180.0" minWidth="143.0" prefWidth="143.0" text="اللقب">
+            <TableColumn fx:id="LnameColumn" maxWidth="180.0" minWidth="100.0" prefWidth="155.0" text="اللقب">
                <graphic>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="   اللقب                  " textAlignment="CENTER" wrappingWidth="211.18359375">
                      <effect>
                         <DropShadow />
                      </effect></Text>
                </graphic></TableColumn>
-            <TableColumn fx:id="DateInsColumn" maxWidth="200.0" minWidth="115.0" prefWidth="137.0" resizable="false" text="تاريخ التسجيل">
+            <TableColumn fx:id="DateInsColumn" maxWidth="200.0" minWidth="115.0" prefWidth="143.0" resizable="false" text="تاريخ التسجيل">
                <graphic>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="تاريخ التسجيل" textAlignment="CENTER" wrappingWidth="120.470703125">
                      <effect>
                         <DropShadow blurType="GAUSSIAN" />
                      </effect></Text>
                </graphic></TableColumn>
-            <TableColumn fx:id="PeriodColumn" maxWidth="151.0" minWidth="89.0" prefWidth="105.0" resizable="false" text="المدة الزمنية        ">
+            <TableColumn fx:id="PeriodColumn" maxWidth="165.0" minWidth="89.0" prefWidth="165.0" resizable="false" text="المدة الزمنية        ">
                <graphic>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="المدة الزمنية" wrappingWidth="107.728515625">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="المدة الزمنية" wrappingWidth="148.728515625">
                      <effect>
                         <DropShadow />
                      </effect></Text>
                </graphic></TableColumn>
-            <TableColumn fx:id="deColumn" maxWidth="250.0" minWidth="56.0" resizable="false" text="حفظ من">
+            <TableColumn fx:id="deColumn" maxWidth="250.0" minWidth="56.0" prefWidth="82.0" resizable="false" text="حفظ من">
                <graphic>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="حفظ من" wrappingWidth="80.099609375">
                      <effect>
                         <DropShadow />
                      </effect></Text>
                </graphic></TableColumn>
-            <TableColumn fx:id="jusquaColumn" maxWidth="291.0" minWidth="63.0" resizable="false" text="حفظ إلى">
+            <TableColumn fx:id="jusquaColumn" maxWidth="291.0" minWidth="62.0" resizable="false" text="حفظ إلى">
                <graphic>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="حفظ إلى" wrappingWidth="81.0859375">
                      <effect>
                         <DropShadow />
                      </effect></Text>
                </graphic></TableColumn>
-            <TableColumn fx:id="nbrDe8Column" maxWidth="140.0" minWidth="0.0" prefWidth="98.0" resizable="false" text="عدد الأثمان">
+            <TableColumn fx:id="nbrDe8Column" maxWidth="140.0" minWidth="0.0" prefWidth="100.0" resizable="false" text="عدد الأثمان">
                <graphic>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="عدد الأثمان" wrappingWidth="83.388671875">
                      <effect>
                         <DropShadow />
                      </effect></Text>
                </graphic></TableColumn>
-            <TableColumn fx:id="totalColumn" maxWidth="370.0" minWidth="102.0" prefWidth="173.0" resizable="false" text="إجمالي الحفظ ">
+            <TableColumn fx:id="totalColumn" maxWidth="370.0" minWidth="102.0" prefWidth="165.0" resizable="false" text="إجمالي الحفظ ">
                <graphic>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="إجمالي الحفظ " textAlignment="CENTER" wrappingWidth="147.58203125">
                      <effect>
@@ -87,7 +87,7 @@
          </effect>
          
                               </TableView>
-      <VBox alignment="CENTER" layoutX="1138.0" layoutY="313.0" prefHeight="220.0" prefWidth="164.0" spacing="20.0">
+      <VBox alignment="CENTER" layoutX="1168.0" layoutY="313.0" prefHeight="220.0" prefWidth="164.0" spacing="20.0">
          <children>
             <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" minWidth="-Infinity" onAction="#ToAddStage" prefHeight="44.0" prefWidth="125.0" ripplerFill="#3bff00" style="-fx-background-color: #7829;" text=" " textFill="#45048a">
                <font>
@@ -127,7 +127,7 @@
             </JFXButton>
          </children>
       </VBox>
-      <ToolBar layoutX="1125.0" layoutY="206.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="191.0" style="-fx-background-color: #4985;">
+      <ToolBar layoutX="1155.0" layoutY="206.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="191.0" style="-fx-background-color: #4985;">
          <items>
             <Text fill="#070707" strokeType="OUTSIDE" strokeWidth="0.0" text="تاريخ إجراء الحساب" textAlignment="CENTER" underline="true" wrappingWidth="179.689453125">
                <font>

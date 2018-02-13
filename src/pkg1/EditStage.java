@@ -14,6 +14,7 @@ public class EditStage extends Stage{
             Scene scene = new Scene(root);
             setScene(scene);
             setResizable(false);
+            setTitle("تعديل بيانات طالب");
         } catch (IOException ex) {
             ex.printStackTrace();
         }

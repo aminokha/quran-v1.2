@@ -17,8 +17,8 @@ public class HomeStage extends Stage{
             setResizable(false); 
             setWidth(Screen.getPrimary().getVisualBounds().getWidth());
             setHeight(Screen.getPrimary().getVisualBounds().getHeight());
-            //when you show this stage for the second time it refresh the data in the table
-//            setOnShowing(e->Tools.fillTable());
+            setMaximized(true);
+            setTitle("برنامج القرآن الكريم v1.0");
         } catch (IOException ex) {
             ex.printStackTrace();
         }

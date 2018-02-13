@@ -67,7 +67,11 @@ public class EditController implements Initializable {
             jusqua = student.jusquaProperty.get();
             txtFName.setText(Fname);
             txtLName.setText(Lname);
+            try {
             txtDateIns.setValue(LocalDate.parse(DateIns));
+            } catch (Exception e) {
+                txtDateIns.setValue(null);
+            }
             comboBegin.getSelectionModel().select(de);
             comboEnd.getSelectionModel().select(jusqua);
         }
@@ -79,7 +83,11 @@ public class EditController implements Initializable {
         if (!tableView.getSelectionModel().isEmpty()) {
             Fname = txtFName.getText();
             Lname = txtLName.getText();
-            DateIns = txtDateIns.getValue().toString();
+            try {
+                DateIns = txtDateIns.getValue().toString();
+            } catch (Exception e) {
+                DateIns ="";
+            }
             de = comboBegin.getSelectionModel().getSelectedItem();
             jusqua = comboEnd.getSelectionModel().getSelectedItem();
             String sql = String.format("UPDATE student set Fname=\"%s\", Lname =\"%s\",DateIns =\"%s\", de=\"%s\",jusqua=\"%s\"  where ID=\"%d\"",

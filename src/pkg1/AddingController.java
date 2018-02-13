@@ -99,6 +99,8 @@ public class AddingController implements Initializable {
                 }
             }
         }.start();
+        
+        
 
     }
 
