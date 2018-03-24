@@ -1,12 +1,13 @@
 package pkg1;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -22,9 +23,9 @@ public class EditController implements Initializable {
     @FXML
     private JFXDatePicker txtDateIns;
     @FXML
-    private ComboBox<String> comboBegin;
+    private ChoiceBox<String> comboBegin;
     @FXML
-    private ComboBox<String> comboEnd;
+    private ChoiceBox<String> comboEnd;
 
     @FXML
     Label lblActionStatus;
@@ -35,6 +36,8 @@ public class EditController implements Initializable {
     private String de;
     private String jusqua;
     private TableView<Student> tableView;
+    @FXML
+    private JFXButton EditButton;
 
     @Override
     public void initialize( URL url, ResourceBundle rb ) {

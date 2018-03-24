@@ -13,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import static pkg1.Main.editStage;
 import static pkg1.Main.homeController;
 import static pkg1.Main.homeStage;
@@ -57,7 +58,7 @@ public class HomeController implements Initializable {
     private JFXButton btnEdit;
 
     @Override
-    public void initialize( URL url, ResourceBundle rb ) {
+    public void initialize(URL url, ResourceBundle rb) {
         homeController = this;
         idColumn.setCellValueFactory(e -> e.getValue().idProperty.asObject());
         FnameColumn.setCellValueFactory(e -> e.getValue().FnameProperty);
@@ -68,7 +69,7 @@ public class HomeController implements Initializable {
         jusquaColumn.setCellValueFactory(e -> e.getValue().jusquaProperty);
         nbrDe8Column.setCellValueFactory(e -> e.getValue().nbrDe8Property);
         totalColumn.setCellValueFactory(e -> e.getValue().TotalProperty);
-        
+
         tableView.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Student> observable, Student oldValue, Student newValue) -> {
             if (tableView.getSelectionModel().isEmpty()) {
                 btnDelete.setDisable(true);
@@ -97,6 +98,7 @@ public class HomeController implements Initializable {
             refresh_LastID(this);
         }
     }
+
     @FXML
     private void deleteKeyIsPressed(KeyEvent event) {
         if ((!tableView.getSelectionModel().isEmpty()) && event.getCode() == KeyCode.DELETE) {
@@ -113,7 +115,6 @@ public class HomeController implements Initializable {
         calculation.calculate(tableView, DateOfCalcule.getValue());
     }
 
-    @FXML
     private void editData() {
         calculation.calculate(tableView, DateOfCalcule.getValue());
     }
@@ -123,6 +124,13 @@ public class HomeController implements Initializable {
         editStage = new EditStage();
         homeStage.hide();
         editStage.show();
+    }
+
+    @FXML
+    private void mouseClicked(MouseEvent event) {
+        if (event.getClickCount() >= 2) {
+            editStudent();
+        }
     }
 
 }
