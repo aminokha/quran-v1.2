@@ -17,11 +17,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="453.0" style="-fx-background-color: #786;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg1.EditController">
    <children>
-      <FlowPane columnHalignment="CENTER" hgap="20.0" layoutX="49.0" layoutY="71.0" prefHeight="337.0" prefWidth="396.0" vgap="20.0">
+      <FlowPane columnHalignment="CENTER" hgap="20.0" layoutX="54.0" layoutY="71.0" prefHeight="337.0" prefWidth="354.0" vgap="20.0">
          <children>
             <TextField fx:id="txtFName" alignment="CENTER_RIGHT" minHeight="-Infinity" prefHeight="45.0" prefWidth="200.0" promptText="إسم التلميذ">
                <font>
-                  <Font name="Arial" size="25.0" />
+                  <Font name="Arial" size="20.0" />
                </font>
                <effect>
                   <DropShadow />
@@ -29,7 +29,7 @@
             </TextField>
             <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="الإسم" wrappingWidth="97.13671875">
                <font>
-                  <Font name="Arial Bold" size="24.0" />
+                  <Font name="Serif Bold" size="20.0" />
                </font>
                <effect>
                   <DropShadow color="WHITE" height="19.83" radius="8.6725" width="16.86" />
@@ -37,7 +37,7 @@
             </Text>
             <TextField fx:id="txtLName" alignment="CENTER_RIGHT" minHeight="-Infinity" prefHeight="45.0" prefWidth="200.0" promptText="لقب التلميذ">
                <font>
-                  <Font name="Arial" size="25.0" />
+                  <Font size="20.0" />
                </font>
                <effect>
                   <DropShadow />
@@ -45,7 +45,7 @@
             </TextField>
             <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="اللقب" wrappingWidth="97.13671875">
                <font>
-                  <Font name="Arial Bold" size="24.0" />
+                  <Font name="Serif Regular" size="20.0" />
                </font>
                <effect>
                   <DropShadow color="WHITE" height="19.83" radius="8.6725" width="16.86" />
@@ -63,35 +63,35 @@
                <effect>
                   <InnerShadow blurType="GAUSSIAN" color="#0161fc" />
                </effect></JFXDatePicker>
-            <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="تاريخ التسجيل" wrappingWidth="155.13671875">
-               <font>
-                  <Font name="Arial Bold" size="24.0" />
-               </font>
+            <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="تاريخ التسجيل" wrappingWidth="123.13671875">
+                     <font>
+                  <Font name="Serif Regular" size="20.0" />
+                     </font>
                <effect>
                   <DropShadow color="WHITE" height="19.83" radius="8.6725" width="16.86" />
                </effect>
-            </Text>
+                  </Text>
             <ChoiceBox fx:id="comboBegin" prefHeight="40.0" prefWidth="200.0" style="-fx-font-size: 17;" />
-            <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="حفظ من سورة" wrappingWidth="175.13671875">
-               <font>
-                  <Font name="Arial Bold" size="24.0" />
-               </font>
+            <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="حفظ من سورة" wrappingWidth="133.13671875">
+                     <font>
+                  <Font name="Serif Regular" size="20.0" />
+                     </font>
                <effect>
                   <DropShadow color="WHITE" height="19.83" radius="8.6725" width="16.86" />
                </effect>
-            </Text>
+                  </Text>
             <ChoiceBox fx:id="comboEnd" prefHeight="40.0" prefWidth="200.0" style="-fx-font-size: 17;" />
             <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="إلى سورة" wrappingWidth="125.13671875">
                <font>
-                  <Font name="Arial Bold" size="24.0" />
+                  <Font name="Serif Regular" size="20.0" />
                </font>
                <effect>
                   <DropShadow color="WHITE" height="19.83" radius="8.6725" width="16.86" />
                </effect>
             </Text>
-         </children>
+               </children>
       </FlowPane>
-      <HBox alignment="CENTER" layoutX="-2.0" layoutY="420.0" prefHeight="40.0" prefWidth="406.0" spacing="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <HBox alignment="CENTER" layoutY="412.0" prefHeight="40.0" prefWidth="406.0" spacing="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" onAction="#ToHomeStage" prefHeight="40.0" prefWidth="110.0" ripplerFill="#0e3601" style="-fx-background-color: #9f99;" text="  " textAlignment="CENTER" textFill="#040228">
                <font>

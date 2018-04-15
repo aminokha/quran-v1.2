@@ -15,6 +15,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import static pkg1.Main.editStage;
+import static pkg1.Main.editController;
 import static pkg1.Main.homeController;
 import static pkg1.Main.homeStage;
 import static pkg1.Tools.refresh_LastID;
@@ -115,15 +116,13 @@ public class HomeController implements Initializable {
         calculation.calculate(tableView, DateOfCalcule.getValue());
     }
 
-    private void editData() {
-        calculation.calculate(tableView, DateOfCalcule.getValue());
-    }
+    
 
     @FXML
     private void editStudent() {
-        editStage = new EditStage();
         homeStage.hide();
         editStage.show();
+        editController.fill_Edit_Stage();
     }
 
     @FXML

@@ -6,10 +6,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -17,7 +18,7 @@ import static pkg1.Main.addingStage;
 import static pkg1.Main.homeStage;
 
 public class AddingController implements Initializable {
-
+    
     @FXML
     private TextField txtFName;
     @FXML
@@ -37,7 +38,7 @@ public class AddingController implements Initializable {
     @Override
     public void initialize( URL url, ResourceBundle rb ) {
         txtDateIns.setValue(LocalDate.now());
-        comboBegin.getItems().addAll("الناس", "الفلق", "الاخلاص", "المسد", "النصر", "الكافرون", "الكوثر", "الماعون",
+        ObservableList<String> list = FXCollections.observableArrayList("الناس", "الفلق", "الاخلاص", "المسد", "النصر", "الكافرون", "الكوثر", "الماعون",
                   "قريش", "الفيل", "الهمزة", "العصر", "التكاثر", "القارعة", "العاديات", "الزلزلة", "البينة", "القدر",
                   "العلق", "التين", "الشرح", "الضحى", "الليل", "الشمس", "البلد", "الفجر", "الغاشية", "الاعلى", "الطارق",
                   "البروج", "الانشقاق", "المطففين", "الانفطار", "التكوير", "عبس", "النازعات", "النبأ", "المرسلات", "الإنسان",
@@ -46,15 +47,8 @@ public class AddingController implements Initializable {
                   "الطور", "الذاريات", "ق", "الحجرات", "الفتح", "محمد", "الأحقاف", "الجاثية", "الدخان", "الزخرف", "الشورى",
                   "فصلت", "غافر", "الزمر", "ص", "الصافات", "يس", "فاطر", "سبأ", "الأحزاب", "السجدة", "لقمان", "الروم", "العنكبوت",
                   "القصص", "النمل", "الشعراء", "الفرقان", "النور", "المومنون", "الحج", "الأنبياء", "طه", "مريم", "الكهف");
-        comboEnd.getItems().addAll("الناس", "الفلق", "الاخلاص", "المسد", "النصر", "الكافرون", "الكوثر", "الماعون",
-                  "قريش", "الفيل", "الهمزة", "العصر", "التكاثر", "القارعة", "العاديات", "الزلزلة", "البينة", "القدر",
-                  "العلق", "التين", "الشرح", "الضحى", "الليل", "الشمس", "البلد", "الفجر", "الغاشية", "الاعلى", "الطارق",
-                  "البروج", "الانشقاق", "المطففين", "الانفطار", "التكوير", "عبس", "النازعات", "النبأ", "المرسلات", "الإنسان",
-                  "القيامة", "المدثر", "المزمل", "الجن", "نوح", "المعارج", "الحاقة", "القلم", "الملك", "التحريم", "الطلاق", "التغابن",
-                  "المنافقون", "الجمعة", "الصف", "الممتحنة", "الحشر", "المجادلة", "الحديد", "الواقعة", "الرحمان", "القمر", "النجم",
-                  "الطور", "الذاريات", "ق", "الحجرات", "الفتح", "محمد", "الأحقاف", "الجاثية", "الدخان", "الزخرف", "الشورى", "فصلت",
-                  "غافر", "الزمر", "ص", "الصافات", "يس", "فاطر", "سبأ", "الأحزاب", "السجدة", "لقمان", "الروم", "العنكبوت", "القصص",
-                  "النمل", "الشعراء", "الفرقان", "النور", "المومنون", "الحج", "الأنبياء", "طه", "مريم", "الكهف");
+        comboBegin.setItems(list);
+        comboEnd.setItems(list);
         comboBegin.setValue("");
         comboEnd.setValue("");
 
@@ -77,6 +71,7 @@ public class AddingController implements Initializable {
 
         String sql = String.format("insert into student (id,fname,lname,dateins,de,jusqua) values (%d,\"%s\",\"%s\",\"%s\",\"%s\",\"%s\")", id, fname, lname, dateIns, de, jusqua);
         Tools.executeSQL(sql);
+        Tools.fillTable((TableView<Student>) homeStage.getScene().getRoot().getChildrenUnmodifiable().get(0));
         new Thread() {
             @Override
             public void run() {
@@ -113,7 +108,7 @@ public class AddingController implements Initializable {
     @FXML
     private void ToHomeStage() {
         addingStage.hide();
-        Tools.fillTable((TableView<Student>) homeStage.getScene().getRoot().getChildrenUnmodifiable().get(0));
+        
         homeStage.show();
     }
 

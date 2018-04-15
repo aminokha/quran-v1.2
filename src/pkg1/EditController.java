@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXDatePicker;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
@@ -41,7 +43,8 @@ public class EditController implements Initializable {
 
     @Override
     public void initialize( URL url, ResourceBundle rb ) {
-        comboBegin.getItems().addAll("الناس", "الفلق", "الاخلاص", "المسد", "النصر", "الكافرون", "الكوثر", "الماعون",
+        Main.editController = this;
+        ObservableList<String> list = FXCollections.observableArrayList("الناس", "الفلق", "الاخلاص", "المسد", "النصر", "الكافرون", "الكوثر", "الماعون",
                   "قريش", "الفيل", "الهمزة", "العصر", "التكاثر", "القارعة", "العاديات", "الزلزلة", "البينة", "القدر",
                   "العلق", "التين", "الشرح", "الضحى", "الليل", "الشمس", "البلد", "الفجر", "الغاشية", "الاعلى", "الطارق",
                   "البروج", "الانشقاق", "المطففين", "الانفطار", "التكوير", "عبس", "النازعات", "النبأ", "المرسلات", "الإنسان",
@@ -50,15 +53,14 @@ public class EditController implements Initializable {
                   "الطور", "الذاريات", "ق", "الحجرات", "الفتح", "محمد", "الأحقاف", "الجاثية", "الدخان", "الزخرف", "الشورى",
                   "فصلت", "غافر", "الزمر", "ص", "الصافات", "يس", "فاطر", "سبأ", "الأحزاب", "السجدة", "لقمان", "الروم", "العنكبوت",
                   "القصص", "النمل", "الشعراء", "الفرقان", "النور", "المومنون", "الحج", "الأنبياء", "طه", "مريم", "الكهف");
-        comboEnd.getItems().addAll("الناس", "الفلق", "الاخلاص", "المسد", "النصر", "الكافرون", "الكوثر", "الماعون",
-                  "قريش", "الفيل", "الهمزة", "العصر", "التكاثر", "القارعة", "العاديات", "الزلزلة", "البينة", "القدر",
-                  "العلق", "التين", "الشرح", "الضحى", "الليل", "الشمس", "البلد", "الفجر", "الغاشية", "الاعلى", "الطارق",
-                  "البروج", "الانشقاق", "المطففين", "الانفطار", "التكوير", "عبس", "النازعات", "النبأ", "المرسلات", "الإنسان",
-                  "القيامة", "المدثر", "المزمل", "الجن", "نوح", "المعارج", "الحاقة", "القلم", "الملك", "التحريم", "الطلاق", "التغابن",
-                  "المنافقون", "الجمعة", "الصف", "الممتحنة", "الحشر", "المجادلة", "الحديد", "الواقعة", "الرحمان", "القمر", "النجم",
-                  "الطور", "الذاريات", "ق", "الحجرات", "الفتح", "محمد", "الأحقاف", "الجاثية", "الدخان", "الزخرف", "الشورى", "فصلت",
-                  "غافر", "الزمر", "ص", "الصافات", "يس", "فاطر", "سبأ", "الأحزاب", "السجدة", "لقمان", "الروم", "العنكبوت", "القصص",
-                  "النمل", "الشعراء", "الفرقان", "النور", "المومنون", "الحج", "الأنبياء", "طه", "مريم", "الكهف");
+        comboBegin.setItems(list);
+        comboEnd.setItems(list);
+
+        fill_Edit_Stage();
+
+    }
+
+    public void fill_Edit_Stage() {
         tableView = (TableView< Student>) homeStage.getScene().getRoot().getChildrenUnmodifiable().get(0);
         if (!tableView.getSelectionModel().isEmpty()) {
             Student student = tableView.getSelectionModel().getSelectedItem();
@@ -71,14 +73,13 @@ public class EditController implements Initializable {
             txtFName.setText(Fname);
             txtLName.setText(Lname);
             try {
-            txtDateIns.setValue(LocalDate.parse(DateIns));
+                txtDateIns.setValue(LocalDate.parse(DateIns));
             } catch (Exception e) {
                 txtDateIns.setValue(null);
             }
             comboBegin.getSelectionModel().select(de);
             comboEnd.getSelectionModel().select(jusqua);
         }
-
     }
 
     @FXML

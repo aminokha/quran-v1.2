@@ -18,7 +18,7 @@ public class HomeStage extends Stage{
             setWidth(Screen.getPrimary().getVisualBounds().getWidth());
             setHeight(Screen.getPrimary().getVisualBounds().getHeight());
             setMaximized(true);
-            setTitle("برنامج القرآن الكريم v1.0");
+            setTitle("برنامج القرآن الكريم v1.2");
         } catch (IOException ex) {
             ex.printStackTrace();
         }

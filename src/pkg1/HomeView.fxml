@@ -131,7 +131,7 @@
                   <DropShadow color="#c90a0a" height="72.86" radius="35.93" spread="0.32" width="72.86" />
                </effect>
             </JFXButton>
-            <JFXButton fx:id="btnDelete" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" minWidth="-Infinity" onAction="#delete" prefHeight="100.0" prefWidth="170.0" ripplerFill="#0c2f01" style="-fx-background-color: #55a000; -fx-border-width: 0.3; -fx-border-color: red;" text=" " textFill="#45048a">
+            <JFXButton fx:id="btnDelete" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" disable="true" minWidth="-Infinity" onAction="#delete" prefHeight="100.0" prefWidth="170.0" ripplerFill="#0c2f01" style="-fx-background-color: #55a000; -fx-border-width: 0.3; -fx-border-color: red;" text=" " textFill="#45048a">
                <font>
                   <Font name="Times New Roman Bold" size="22.0" />
                </font>
@@ -146,7 +146,7 @@
                   <DropShadow color="#c90a0a" height="72.86" radius="35.93" spread="0.32" width="72.86" />
                </effect>
             </JFXButton>
-            <JFXButton fx:id="btnEdit" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" minWidth="-Infinity" onAction="#editStudent" prefHeight="100.0" prefWidth="170.0" ripplerFill="#0c2f01" style="-fx-background-color: #55a000; -fx-border-width: 0.3; -fx-border-color: red;" text=" " textFill="#45048a">
+            <JFXButton fx:id="btnEdit" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" disable="true" minWidth="-Infinity" onAction="#editStudent" prefHeight="100.0" prefWidth="170.0" ripplerFill="#0c2f01" style="-fx-background-color: #55a000; -fx-border-width: 0.3; -fx-border-color: red;" text=" " textFill="#45048a">
                <font>
                   <Font name="Times New Roman Bold" size="22.0" />
                </font>

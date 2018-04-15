@@ -17,11 +17,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="448.0" style="-fx-background-color: #786;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg1.AddingController">
    <children>
-      <FlowPane columnHalignment="CENTER" hgap="20.0" layoutX="44.0" layoutY="67.0" prefHeight="330.0" prefWidth="390.0" vgap="20.0" AnchorPane.rightAnchor="14.0">
+      <FlowPane columnHalignment="CENTER" hgap="20.0" layoutX="63.0" layoutY="74.0" prefHeight="330.0" prefWidth="342.0" vgap="20.0" AnchorPane.rightAnchor="43.0">
          <children>
             <TextField fx:id="txtFName" alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="200.0" promptText="إسم التلميذ">
                <font>
-                  <Font name="Arial" size="25.0" />
+                  <Font size="20.0" />
                </font>
                <effect>
                   <DropShadow />
@@ -29,7 +29,7 @@
             </TextField>
             <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="الإسم" wrappingWidth="97.13671875">
                <font>
-                  <Font name="Arial Bold" size="24.0" />
+                  <Font name="Serif Regular" size="20.0" />
                </font>
                <effect>
                   <DropShadow color="WHITE" height="19.83" radius="8.6725" width="16.86" />
@@ -37,7 +37,7 @@
             </Text>
             <TextField fx:id="txtLName" alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="200.0" promptText="لقب التلميذ">
                <font>
-                  <Font name="Arial" size="25.0" />
+                  <Font size="20.0" />
                </font>
                <effect>
                   <DropShadow />
@@ -45,7 +45,7 @@
             </TextField>
             <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="اللقب" wrappingWidth="97.13671875">
                <font>
-                  <Font name="Arial Bold" size="24.0" />
+                  <Font name="Serif Regular" size="20.0" />
                </font>
                <effect>
                   <DropShadow color="WHITE" height="19.83" radius="8.6725" width="16.86" />
@@ -63,27 +63,27 @@
                <effect>
                   <InnerShadow blurType="GAUSSIAN" color="#0161fc" />
                </effect></JFXDatePicker>
-            <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="تاريخ التسجيل" wrappingWidth="149.13671875">
+            <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="تاريخ التسجيل" wrappingWidth="109.13671875">
                <font>
-                  <Font name="Arial Bold" size="24.0" />
+                  <Font name="Serif Regular" size="20.0" />
                </font>
                <effect>
                   <DropShadow color="WHITE" height="19.83" radius="8.6725" width="16.86" />
                </effect>
             </Text>
-            <ChoiceBox fx:id="comboBegin" prefHeight="40.0" prefWidth="200.0" style="-fx-font-size: 16;" />
-            <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="حفظ من سورة" wrappingWidth="156.13671875">
+            <ChoiceBox fx:id="comboBegin" prefHeight="40.0" prefWidth="200.0" style="-fx-font-size: 17;" />
+            <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="حفظ من سورة" wrappingWidth="115.13671875">
                <font>
-                  <Font name="Arial Bold" size="24.0" />
+                  <Font name="Serif Regular" size="20.0" />
                </font>
                <effect>
                   <DropShadow color="WHITE" height="19.83" radius="8.6725" width="16.86" />
                </effect>
             </Text>
-            <ChoiceBox fx:id="comboEnd" layoutX="10.0" layoutY="214.0" prefHeight="40.0" prefWidth="200.0" style="-fx-font-size: 16;" />
-            <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="إلى سورة" wrappingWidth="150.13671875">
+            <ChoiceBox fx:id="comboEnd" layoutX="10.0" layoutY="214.0" prefHeight="40.0" prefWidth="200.0" style="-fx-font-size: 17;" />
+            <Text fill="#4f0d7a" strokeType="OUTSIDE" strokeWidth="0.0" text="إلى سورة" wrappingWidth="97.13671875">
                <font>
-                  <Font name="Arial Bold" size="24.0" />
+                  <Font name="Serif Regular" size="20.0" />
                </font>
                <effect>
                   <DropShadow color="WHITE" height="19.83" radius="8.6725" width="16.86" />
