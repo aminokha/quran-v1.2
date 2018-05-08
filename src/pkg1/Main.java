@@ -30,15 +30,6 @@ public class Main extends Application {
         homeStage = new HomeStage();
         editStage = new EditStage();
         addingStage = new AddingStage();
-        homeStage.getScene().setOnKeyPressed(e -> {
-            if (e.isAltDown() && e.isControlDown() && e.getCode() == KeyCode.C) {
-                if (JOptionPane.showConfirmDialog(null, "ستؤدي هذه العملية إلى حذف بيانات جميع التلاميذ ،هل تريد فعل هذا") == 0) {
-                    Tools.executeSQL("delete from student where id < 500 ");
-                    Tools.fillTable(homeController.tableView);
-                    Tools.refresh_LastID(homeController);
-                }
-            }
-        });
         homeStage.show();
     }
 

@@ -71,7 +71,7 @@ public class AddingController implements Initializable {
 
         String sql = String.format("insert into student (id,fname,lname,dateins,de,jusqua) values (%d,\"%s\",\"%s\",\"%s\",\"%s\",\"%s\")", id, fname, lname, dateIns, de, jusqua);
         Tools.executeSQL(sql);
-        Tools.fillTable((TableView<Student>) homeStage.getScene().getRoot().getChildrenUnmodifiable().get(0));
+        Tools.fillTable(Main.homeController.tableView);
         new Thread() {
             @Override
             public void run() {
@@ -108,7 +108,6 @@ public class AddingController implements Initializable {
     @FXML
     private void ToHomeStage() {
         addingStage.hide();
-        
         homeStage.show();
     }
 

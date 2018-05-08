@@ -2,18 +2,27 @@ package pkg1;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javax.swing.JOptionPane;
 import static pkg1.Main.editStage;
 import static pkg1.Main.editController;
 import static pkg1.Main.homeController;
@@ -57,6 +66,17 @@ public class HomeController implements Initializable {
     private JFXDatePicker DateOfCalcule;
     @FXML
     private JFXButton btnEdit;
+    private JFXHamburger hamburger;
+    private JFXDrawer drawer;
+    HamburgerSlideCloseTransition action;
+    @FXML
+    private MenuItem addMenuItem;
+    @FXML
+    private MenuItem deleteMenuItem;
+    @FXML
+    private MenuItem editMenuItem;
+    @FXML
+    private MenuItem deleteAllMenuItem;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -74,10 +94,14 @@ public class HomeController implements Initializable {
         tableView.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Student> observable, Student oldValue, Student newValue) -> {
             if (tableView.getSelectionModel().isEmpty()) {
                 btnDelete.setDisable(true);
+                deleteMenuItem.setDisable(true);
                 btnEdit.setDisable(true);
+                editMenuItem.setDisable(true);
             } else {
                 btnDelete.setDisable(false);
+                deleteMenuItem.setDisable(false);
                 btnEdit.setDisable(false);
+                editMenuItem.setDisable(false);
             }
         });
         Tools.fillTable(tableView);
@@ -116,8 +140,6 @@ public class HomeController implements Initializable {
         calculation.calculate(tableView, DateOfCalcule.getValue());
     }
 
-    
-
     @FXML
     private void editStudent() {
         homeStage.hide();
@@ -130,6 +152,34 @@ public class HomeController implements Initializable {
         if (event.getClickCount() >= 2) {
             editStudent();
         }
+    }
+
+    public void deleteAllStudent_1(KeyEvent e) {
+        if (e.isAltDown() && e.isControlDown() && e.getCode() == KeyCode.C) {
+            if (JOptionPane.showConfirmDialog(null, "ستؤدي هذه العملية إلى حذف بيانات جميع التلاميذ ،هل تريد فعل هذا") == 0) {
+                Tools.executeSQL("delete from student where id < 5000 ");
+                Tools.fillTable(homeController.tableView);
+                Tools.refresh_LastID(homeController);
+            }
+        }
+    }
+
+    public void deleteAllStudent_2(ActionEvent e) {
+        String msg = "ستؤدي هذه العملية إلى حذف بيانات جميع التلاميذ" + "!!!\n" + "هل تريد فعل ذلك ؟";
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, msg, ButtonType.CANCEL, ButtonType.OK);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            Tools.executeSQL("delete from student where id < 5000 ");
+            Tools.fillTable(homeController.tableView);
+            Tools.refresh_LastID(homeController);
+        }
+        
+        
+    }
+
+    public void exit() {
+        System.exit(0);
+        System.out.println("exit");
     }
 
 }

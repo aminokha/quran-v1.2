@@ -61,7 +61,7 @@ public class EditController implements Initializable {
     }
 
     public void fill_Edit_Stage() {
-        tableView = (TableView< Student>) homeStage.getScene().getRoot().getChildrenUnmodifiable().get(0);
+        tableView = Main.homeController.tableView;
         if (!tableView.getSelectionModel().isEmpty()) {
             Student student = tableView.getSelectionModel().getSelectedItem();
             Id = student.idProperty.get();
@@ -104,8 +104,8 @@ public class EditController implements Initializable {
 
     @FXML
     private void ToHomeStage() {
-        editStage.close();
-        Tools.fillTable((TableView<Student>) homeStage.getScene().getRoot().getChildrenUnmodifiable().get(0));
+//        Tools.fillTable(Main.homeController.tableView);
         homeStage.show();
+        editStage.hide();
     }
 }
