@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 16, 2018, 9:33:11 PM
+    Author     : amine
+*/
+
+.root{
+    -fx-background-color: red;
+}
+.button{
+    -fx-background-color: red;
+    
+}
+.label{
+    -fx-text-fill: #331a17;
+    -fx-font-size: 25 px;
+     -fx-font-family: "Times New Roman";
+    -fx-font-weight: 700;
+}
+.button{
+    -fx-font-size: 30px;
+    -fx-text-fill: black;
+    -fx-font-family: "Times New Roman";
+    -fx-font-weight: 200;
+    -fx-background-color:  #876767;
+}

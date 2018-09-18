@@ -1,0 +1,97 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 14, 2018, 11:09:19 AM
+    Author     : amine
+*/
+
+.root{
+    -fx-text-alignment: center;
+    -fx-background-color: #382929;
+}
+.tableview-celll{
+    -fx-font-size: 30px;
+    
+}
+
+.button{
+    -fx-font-size: 30px;
+    -fx-text-fill: black;
+    -fx-font-family: "Times New Roman";
+    -fx-font-weight: 200;
+    -fx-background-color:  #876767;
+}
+#textDate{
+        -fx-font-size: 22 px;
+        -fx-font-family: "Times New Roman";
+        -fx-font-weight: 700;
+
+}
+
+.menu-bar{ 
+    -fx-font-size: 15px;
+    -fx-background-color: #382929;
+    
+}
+.menu{
+    -fx-font-size: 15 px;
+    -fx-font-family: "Times New Roman";
+    -fx-font-weight: 700;
+    -fx-background-color: #876767;
+    
+}
+.menu-item .label {
+    -fx-text-fill: #AFAFB0;
+}
+#columnTitle{
+    -fx-font-family: "Times New Roman";
+    -fx-font-weight: 700;
+    -fx-background-color: transparent;
+}
+
+.menu-item:focused {
+    -fx-background-color: #a25f7c;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: #770d4e;
+}
+.menu .label{
+    -fx-text-fill: #d6c9df;
+}
+
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color: #1c1625;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+    /*    -fx-padding: 0.666667em 0.083333em 0.666667em 0.083333em;  8 1 8 1 */
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; /* 4 1 8 1 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #6b706e;
+    -fx-text-fill: #585581;
+    -fx-font-size: 18 px;
+}
+.table-row-cell:even {
+    -fx-background-color: #6b8a8d;
+    -fx-text-fill: red;
+    -fx-font-size: 18 px;
+}
+.table-row-cell:focused {
+    -fx-background-color: #6bcd8b;
+    -fx-text-fill: red; /*not working*/
+
+}
+.table-view .label{
+    -fx-text-fill: #d6c9df;
+    -fx-font-size: 16 px;
+    -fx-background-color: #772447;
+    -fx-background-radius: 10;
+    -fx-background-size: 200px , 200px;
+    
+}

@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
+import de.jensd.fx.glyphs.materialicons.MaterialIcon;
+import de.jensd.fx.glyphs.materialicons.MaterialIconView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -77,6 +79,8 @@ public class HomeController implements Initializable {
     private MenuItem editMenuItem;
     @FXML
     private MenuItem deleteAllMenuItem;
+    @FXML
+    private JFXButton btnAdd;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -164,6 +168,7 @@ public class HomeController implements Initializable {
         }
     }
 
+    @FXML
     public void deleteAllStudent_2(ActionEvent e) {
         String msg = "ستؤدي هذه العملية إلى حذف بيانات جميع التلاميذ" + "!!!\n" + "هل تريد فعل ذلك ؟";
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, msg, ButtonType.CANCEL, ButtonType.OK);
@@ -180,6 +185,11 @@ public class HomeController implements Initializable {
     public void exit() {
         System.exit(0);
         System.out.println("exit");
+    }
+
+    @FXML
+    private void fullScreen(ActionEvent event) {
+        
     }
 
 }

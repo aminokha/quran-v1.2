@@ -2,9 +2,7 @@ package pkg1;
 
 import java.sql.SQLException;
 import javafx.application.Application;
-import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import javax.swing.JOptionPane;
 import static pkg1.Tools.createDataBase;
 
 public class Main extends Application {

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jfoenix-0.0.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.20.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

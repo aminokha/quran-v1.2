@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg1.HomeController">
+   <center>
+      <AnchorPane prefHeight="701.0" prefWidth="1367.0" style="-fx-background-color: #786;">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TableView fx:id="tableView" editable="true" layoutX="10.0" layoutY="67.0" nodeOrientation="RIGHT_TO_LEFT" onKeyPressed="#deleteKeyIsPressed" onMouseClicked="#mouseClicked" prefHeight="604.0" prefWidth="1109.0" style="-fx-font-size: 18;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="30.0" AnchorPane.topAnchor="67.0">
+                    <columns>
+                      <TableColumn fx:id="idColumn" maxWidth="60.0" minWidth="50.0" prefWidth="60.0" resizable="false" text="الرقم">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الرقم" textAlignment="CENTER">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                      <TableColumn fx:id="FnameColumn" maxWidth="180.0" minWidth="100.0" prefWidth="140.0" text="الإسم">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الإسم           " textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="188.392578125">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="LnameColumn" maxWidth="180.0" minWidth="100.0" prefWidth="155.0" text="اللقب">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="   اللقب                  " textAlignment="CENTER" wrappingWidth="211.18359375">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="DateInsColumn" maxWidth="200.0" minWidth="115.0" prefWidth="143.0" resizable="false" text="تاريخ التسجيل">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="تاريخ التسجيل" textAlignment="CENTER" wrappingWidth="120.470703125">
+                                 <effect>
+                                    <DropShadow blurType="GAUSSIAN" />
+                                 </effect>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="PeriodColumn" maxWidth="165.0" minWidth="89.0" prefWidth="131.0" resizable="false" text="المدة الزمنية        ">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="المدة الزمنية" wrappingWidth="148.728515625">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="deColumn" maxWidth="250.0" minWidth="56.0" prefWidth="100.0" resizable="false" text="حفظ من">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="حفظ من" wrappingWidth="104.099609375">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="jusquaColumn" maxWidth="291.0" minWidth="62.0" prefWidth="100.0" resizable="false" text="حفظ إلى">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="حفظ إلى" wrappingWidth="105.0859375">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="nbrDe8Column" maxWidth="140.0" minWidth="0.0" prefWidth="90.0" resizable="false" text="عدد الأثمان">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="عدد الأثمان" wrappingWidth="107.388671875">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="totalColumn" maxWidth="370.0" minWidth="102.0" prefWidth="165.0" resizable="false" text="إجمالي الحفظ ">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="إجمالي الحفظ " textAlignment="CENTER" wrappingWidth="147.58203125">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                    </columns>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     
+                                                            </TableView>
+                  <ToolBar layoutX="1145.0" layoutY="76.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="191.0" style="-fx-background-color: #4985;">
+                     <items>
+                        <Text fill="#070707" strokeType="OUTSIDE" strokeWidth="0.0" text="تاريخ إجراء الحساب" textAlignment="CENTER" wrappingWidth="179.689453125">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Text>
+                        <JFXDatePicker fx:id="DateOfCalcule" defaultColor="#140094" onAction="#calcule" prefHeight="44.0" prefWidth="181.0" style="-fx-font-size: 20; -fx-font-weight: 700;">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <tooltip>
+                              <Tooltip contentDisplay="RIGHT" text="عند ادخال التاريخ يتم حساب المدة الزمنية و مقدار الحفظ لكل طالب" textAlignment="RIGHT">
+                                 <font>
+                                    <Font name="Arial" size="17.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </JFXDatePicker>
+                     </items>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="15.07" radius="6.975" width="14.83" />
+                     </effect>
+                     <padding>
+                        <Insets left="7.0" top="15.0" />
+                     </padding>
+                  </ToolBar>
+                  <VBox alignment="CENTER" layoutX="1154.0" layoutY="320.0" prefHeight="334.0" prefWidth="159.0" AnchorPane.bottomAnchor="47.0">
+                     <children>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" minWidth="-Infinity" onAction="#ToAddStage" prefHeight="100.0" prefWidth="170.0" ripplerFill="#0c2f01" style="-fx-background-color: #55a000; -fx-border-width: 0.3; -fx-border-color: red;" text=" " textFill="#45048a">
+                           <font>
+                              <Font name="Times New Roman Bold" size="22.0" />
+                           </font>
+                           <graphic>
+                              <Text fill="#0d037c" scaleX="1.5" strokeType="OUTSIDE" strokeWidth="0.0" text="إضافة طالب" textAlignment="CENTER" wrappingWidth="114.88427734375">
+                                 <font>
+                                    <Font name="Liberation Serif Bold Italic" size="25.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                           <effect>
+                              <DropShadow color="#c90a0a" height="72.86" radius="35.93" spread="0.32" width="72.86" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDelete" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" disable="true" minWidth="-Infinity" onAction="#delete" prefHeight="100.0" prefWidth="170.0" ripplerFill="#0c2f01" style="-fx-background-color: #55a000; -fx-border-width: 0.3; -fx-border-color: red;" text=" " textFill="#45048a">
+                           <font>
+                              <Font name="Times New Roman Bold" size="22.0" />
+                           </font>
+                           <graphic>
+                              <Text fill="#0d037c" scaleX="1.5" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="5.0" strokeWidth="0.0" text="حذف طالب" textAlignment="CENTER" wrappingWidth="109.88427734375">
+                                 <font>
+                                    <Font name="Liberation Serif Bold Italic" size="25.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                           <effect>
+                              <DropShadow color="#c90a0a" height="72.86" radius="35.93" spread="0.32" width="72.86" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton fx:id="btnEdit" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" disable="true" minWidth="-Infinity" onAction="#editStudent" prefHeight="100.0" prefWidth="170.0" ripplerFill="#0c2f01" style="-fx-background-color: #55a000; -fx-border-width: 0.3; -fx-border-color: red;" text=" " textFill="#45048a">
+                           <font>
+                              <Font name="Times New Roman Bold" size="22.0" />
+                           </font>
+                           <graphic>
+                              <Text fill="#0d037c" scaleX="1.4" strokeType="OUTSIDE" strokeWidth="0.0" text="تعديل البيانات" textAlignment="CENTER" wrappingWidth="130.88427734375">
+                                 <font>
+                                    <Font name="Liberation Serif Bold Italic" size="25.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                           <effect>
+                              <DropShadow color="#c90a0a" height="72.86" radius="35.93" spread="0.32" width="72.86" />
+                           </effect>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <MenuBar nodeOrientation="RIGHT_TO_LEFT" style="-fx-background-color: #786; -fx-font-weight: 700; -fx-font-size: 15;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" style="-fx-background-color: #479;" text="عرض">
+            <items>
+              <MenuItem mnemonicParsing="false" text="ملء الشاشة" />
+                  <MenuItem mnemonicParsing="false" text="تغيير الألوان" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" style="-fx-background-color: #479;" text="بحث">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="عن طريق الاسم" />
+                  <MenuItem mnemonicParsing="false" text="عن طريق اللقب" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" style="-fx-background-color: #479;" text="تعديل">
+            <items>
+              <MenuItem fx:id="addMenuItem" mnemonicParsing="false" onAction="#ToAddStage" text="إضافة">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="NUMPAD1" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="deleteMenuItem" disable="true" mnemonicParsing="false" onAction="#delete" text="حذف">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="NUMPAD2" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="editMenuItem" disable="true" mnemonicParsing="false" onAction="#editStudent" text="تعديل">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="NUMPAD3" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="deleteAllMenuItem" mnemonicParsing="false" onAction="#deleteAllStudent_2" text="حذف جميع الطلاب">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" style="-fx-background-color: #479;" text="مساعدة">
+            <items>
+              <MenuItem mnemonicParsing="false" text="الاستخدام" />
+                  <MenuItem mnemonicParsing="false" text="عن البرنامج" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
